@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useStore } from '../store/useStore';
-import { AlertTriangle, Check, X, ArrowRight, Upload, SkipForward, FileText } from 'lucide-react';
+import { Check, X, ArrowRight, Upload, SkipForward, FileText } from 'lucide-react';
 import { motion } from 'framer-motion';
 import '../styles/Steps.css';
 

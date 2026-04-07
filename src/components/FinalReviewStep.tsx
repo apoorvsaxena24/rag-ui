@@ -4,7 +4,7 @@ import type { SkippedStep } from '../store/useStore';
 import { exportFAQsToDocx } from '../services/textAnalyzer';
 import { saveAs } from 'file-saver';
 import {
-  CheckCircle, Download, RotateCcw, ArrowRight, ArrowLeft,
+  CheckCircle, RotateCcw, ArrowRight, ArrowLeft,
   Edit2, Check, ChevronDown, ChevronUp, Cpu, Clock,
   FileSpreadsheet, FileJson, AlertTriangle, SkipForward,
 } from 'lucide-react';

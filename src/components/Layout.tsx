@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStore } from '../store/useStore';
-import { FileText, AlertTriangle, Book, CheckCircle, HelpCircle, Layers, Search } from 'lucide-react';
+import { FileText, AlertTriangle, CheckCircle, HelpCircle, Layers, Search } from 'lucide-react';
 import { motion } from 'framer-motion';
 import '../styles/Layout.css';
 
@@ -14,7 +14,7 @@ const steps = [
 ];
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { currentStep, setCurrentStep, parsedDocuments, processedDocCount, skippedSteps } = useStore();
+  const { currentStep, setCurrentStep, parsedDocuments, skippedSteps } = useStore();
   const totalDocs = parsedDocuments.length;
   const showProgress = currentStep >= 1 && currentStep <= 4 && totalDocs > 0;
 

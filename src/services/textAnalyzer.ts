@@ -716,12 +716,11 @@ export interface GuidelineViolation {
 
 export function validateContentGuidelines(
   faqs: FAQItem[],
-  docs: ParsedDocument[],
+  _docs: ParsedDocument[],
 ): GuidelineViolation[] {
   const violations: GuidelineViolation[] = [];
   let counter = 0;
   const activeFaqs = faqs.filter(f => f.status !== 'deleted');
-  const fullText = docs.map(d => d.text).join('\n');
 
   // --- Rule 1: No duplicate question with different answers ---
   for (let i = 0; i < activeFaqs.length; i++) {

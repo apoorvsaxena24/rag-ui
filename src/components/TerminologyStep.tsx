@@ -18,7 +18,7 @@ export const TerminologyStep: React.FC = () => {
   const [termsExpanded, setTermsExpanded] = useState(true);
   const [searchExpanded, setSearchExpanded] = useState(true);
   const matchRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const debounceRef = useRef<ReturnType<typeof setTimeout>>();
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const pendingTerms = undefinedTerms.filter(t => t.status === 'pending');
   const definedTerms = undefinedTerms.filter(t => t.status === 'defined');
