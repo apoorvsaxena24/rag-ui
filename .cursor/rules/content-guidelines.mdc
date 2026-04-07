@@ -1,0 +1,34 @@
+---
+description: Content Writing Guidelines that the RAG UI must enforce on generated FAQs
+alwaysApply: false
+globs: "**/textAnalyzer.ts"
+---
+
+# Content Writing Guidelines (14 Rules)
+
+The `validateContentGuidelines()` function in `textAnalyzer.ts` must enforce these rules. If adding new FAQ features or modifying FAQ generation, ensure these checks still apply.
+
+## Rules Enforced Automatically
+
+1. **No duplicate questions with different answers** — flag as error
+2. **Answer max 3 paragraphs** — flag as warning
+3. **Questions must be complete/standalone** — detect vague refs like "this", "above"
+6. **Q/A pairs self-contained** — detect "see Q1", "as mentioned above"
+8. **Jargon defined in brackets** — detect terms without `TERM (definition)` format
+9. **Acronyms with full form in brackets every time** — detect bare acronyms
+10. **Remove product-specific #tags** — detect #ProductName patterns
+11. **No cross-references** — detect "see above", "refer below"
+12/13. **Consistent terminology** — detect synonym pairs both used
+14. **No screenshots/images** — detect image references in text
+
+## Rules Requiring Human Judgment (not automated)
+
+4. Frame questions as users would ask them
+5. Include an initial product-explaining question
+7. Friendly and helpful tone
+
+## When Modifying Guideline Checks
+
+- Violations use severity: `error` (must fix) or `warning` (should fix)
+- Each violation links to the specific `faqId` it applies to, or `null` for global
+- Violations re-run on every FAQ edit via `refreshGuidelines()`
