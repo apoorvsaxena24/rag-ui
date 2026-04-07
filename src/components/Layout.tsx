@@ -23,7 +23,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       <aside className="sidebar">
         <div className="sidebar-brand">
           <div className="brand-logo-wrap">
-            <img src="/exotel-logo.png" alt="Exotel" className="brand-logo" />
+            <img src={`${import.meta.env.BASE_URL}exotel-logo.png`} alt="Exotel" className="brand-logo" />
           </div>
           <span className="brand-rag">RAG</span>
         </div>
