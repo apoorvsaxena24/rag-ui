@@ -2,6 +2,7 @@ import React from 'react';
 import { useStore } from '../store/useStore';
 import { FileText, AlertTriangle, CheckCircle, HelpCircle, Layers, Search } from 'lucide-react';
 import { motion } from 'framer-motion';
+import exotelLogo from '../assets/exotel-logo.png';
 import '../styles/Layout.css';
 
 const steps = [
@@ -23,7 +24,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       <aside className="sidebar">
         <div className="sidebar-brand">
           <div className="brand-logo-wrap">
-            <img src={`${import.meta.env.BASE_URL}exotel-logo.png`} alt="Exotel" className="brand-logo" />
+            <img src={exotelLogo} alt="Exotel" className="brand-logo" />
           </div>
           <span className="brand-rag">RAG</span>
         </div>
