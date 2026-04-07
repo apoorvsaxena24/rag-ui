@@ -1,0 +1,31 @@
+UNO Digital Bank - Additional Product Policies (2026 Update)
+
+QUESTION: What is the maximum transaction limit for UNO Digital Bank?
+ANSWER: The maximum daily transaction limit for InstaPay is PHP 50,000 per transaction and PHP 200,000 per day. For PESONet, the limit is PHP 500,000 per transaction.
+
+QUESTION: What are the fees and charges for UNO Digital Bank?
+ANSWER: Opening an #UNOready Account comes with a one-time activation fee of PHP 150. InstaPay transfers are charged PHP 10.00 per transaction. PESONet transfers are FREE.
+
+QUESTION: Is my money in UNO guaranteed by PDIC?
+ANSWER: Yes. Deposits are insured by PDIC for up to PHP 500,000 per depositor. This coverage applies to all deposit accounts combined.
+
+QUESTION: How long is the auto-logout timer in the UNO Mobile App?
+ANSWER: For security, the UNO Mobile App will automatically log you out after 3 minutes of inactivity.
+
+QUESTION: What are the minimum OS requirements to download the UNO Mobile App?
+ANSWER: For iPhone users, the minimum supported software system is iOS 15.0 or later. For Android users, the minimum supported OS is Android 10.0 or later.
+
+QUESTION: Can I use the UNO Mobile App on a tablet?
+ANSWER: Yes. Starting from version 5.0, the UNO Mobile App is available for both mobile devices and tablets.
+
+QUESTION: How many people can I refer in the UNO Referral Program?
+ANSWER: You can refer a maximum of 20 friends per month under the referral program.
+
+QUESTION: What is the interest rate for #UNOready savings account?
+ANSWER: The current interest rate for #UNOready savings account is 3.5% per annum, one of the highest in the Philippine digital banking market.
+
+QUESTION: What documents are needed for loan application?
+ANSWER: For loan applications, you need: valid government ID, proof of income (latest payslip or ITR), selfie verification, and a minimum account age of 30 days.
+
+QUESTION: What is UNO Coins?
+ANSWER: UNO Coins is a loyalty rewards program where users earn points for completing eligible transactions. Coins can be redeemed for cashback vouchers within the app.

@@ -1,0 +1,43 @@
+---
+description: Testing conventions — 3-level test strategy and mock patterns
+globs: "**/*.test.tsx"
+alwaysApply: false
+---
+
+# Testing Conventions
+
+## 3 Levels of Tests
+
+| Level | File | What It Tests |
+|-------|------|---------------|
+| Unit | `src/tests/unit.test.tsx` | Individual component rendering in isolation |
+| Integration | `src/tests/integration.test.tsx` | Workflow step progression, button interactions |
+| Flow | `src/tests/flow.test.tsx` | Full app flow: Unreadable → Conflicts → FAQs → Review |
+
+## Mock Pattern
+
+All tests mock the Zustand store and services:
+
+```typescript
+vi.mock('../store/useStore');
+vi.mock('../services/documentParser', () => ({ parseFile: vi.fn() }));
+vi.mock('../services/textAnalyzer', () => ({
+  detectUnreadable: vi.fn(() => []),
+  detectConflicts: vi.fn(() => []),
+  generateFAQs: vi.fn(() => []),
+  detectUndefinedTerms: vi.fn(() => []),
+  validateContentGuidelines: vi.fn(() => []),
+  searchTermAcrossDocs: vi.fn(() => []),
+  exportFAQsToDocx: vi.fn(),
+}));
+```
+
+## When Adding New Store Properties
+
+If you add new properties to `useStore.ts`, you MUST also add them to the `baseMock` object in `flow.test.tsx`. Missing mock properties cause `TypeError: Cannot read properties of undefined`.
+
+## Running Tests
+
+- `npm test` — watch mode
+- `npm test -- --run` — single run
+- `npm run test:e2e` — Playwright browser tests (requires `npx playwright install`)

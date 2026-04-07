@@ -1,0 +1,57 @@
+---
+description: UI design system — colors, spacing, typography, and visual patterns for the RAG UI
+globs: "**/*.{css,tsx}"
+alwaysApply: false
+---
+
+# RAG UI Design System
+
+## Theme: Blue (Exotel Branding)
+
+Primary color is blue `#2563eb`. Never change the theme to green, emerald, or any other color.
+
+### CSS Variables (defined in `src/index.css`)
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--color-primary` | `#2563eb` | Buttons, active states, links |
+| `--color-primary-hover` | `#1d4ed8` | Button hover |
+| `--color-primary-light` | `#eff6ff` | Highlighted backgrounds |
+| `--color-primary-100` | `#dbeafe` | Subtle accents |
+| `--color-primary-border` | `#93c5fd` | Focus rings, active borders |
+| `--color-bg` | `#f8fafc` | Page background |
+| `--color-surface` | `#ffffff` | Card/panel backgrounds |
+| `--color-border` | `#e2e8f0` | Dividers, card borders |
+| `--color-text` | `#1e293b` | Body text |
+| `--color-text-secondary` | `#64748b` | Descriptions, labels |
+| `--color-amber` | `#f59e0b` | Warnings, "Skip" buttons |
+| `--color-red` | `#ef4444` | Errors, delete actions |
+
+### Border Radius
+
+- `--radius-sm`: 0.375rem — badges, small tags
+- `--radius-md`: 0.5rem — inputs, small buttons
+- `--radius-lg`: 0.75rem — cards, nav buttons
+- `--radius-xl`: 1rem — large panels, sections
+
+## Layout Rules
+
+- **Sidebar**: Fixed 16rem wide, white background, left side
+- **Exotel logo**: `width: 10rem`, centered in sidebar brand area, with "RAG" badge below
+- **Main area**: `flex:1; overflow:auto; padding:2rem`
+- **User info**: Bottom-left sidebar — "Apoorv Saxena, Product Manager" with "AS" avatar
+
+## Component Patterns
+
+- **Buttons**: Use `.btn-primary` for CTAs, `.btn-outline-sm` for secondary, `.btn-skip` for skip actions
+- **Cards**: White background, 1px border, `--radius-xl`, `--shadow-sm`
+- **Tags/Badges**: Small pill shapes with semantic colors (green=approved, blue=new, amber=warning, red=error)
+- **Step footer**: Always use `className="step-foot sticky-foot"` — keeps buttons visible at bottom during scroll
+- **Empty states**: Centered icon + heading + description
+
+## Do NOT
+
+- Use Tailwind CSS utility classes — this project uses vanilla CSS only
+- Introduce a CSS framework (Bootstrap, MUI, etc.)
+- Change the Exotel logo or branding colors
+- Use inline styles except for dynamic values (e.g., width percentages)

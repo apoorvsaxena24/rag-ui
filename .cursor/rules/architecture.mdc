@@ -1,0 +1,53 @@
+---
+description: Project architecture — state management, service layer, component patterns
+alwaysApply: true
+---
+
+# RAG UI Architecture
+
+## State Management: Zustand (single store)
+
+- All state lives in `src/store/useStore.ts`
+- Components access state via `const { ... } = useStore()`
+- No prop drilling — any component can read/write any state
+- Actions are defined alongside state in the store
+
+## Service Layer
+
+Two service files hold ALL business logic, separate from UI:
+
+- `src/services/documentParser.ts` — PDF/DOCX/TXT text extraction
+- `src/services/textAnalyzer.ts` — Unreadable detection, terminology, conflict detection, FAQ generation, guideline validation, DOCX export
+
+When adding new analysis features, add them to `textAnalyzer.ts` and wire into `runIngestion()` in the store.
+
+## Component Structure
+
+Each workflow step = one component file in `src/components/`:
+
+| Step | Component | CSS |
+|------|-----------|-----|
+| 0 | Upload.tsx | Upload.css |
+| 1 | UnreadableContentStep.tsx | Steps.css |
+| 2 | TerminologyStep.tsx | Steps.css |
+| 3 | ConflictStep.tsx | Steps.css |
+| 4 | FAQStep.tsx | Steps.css |
+| 5 | FinalReviewStep.tsx | Steps.css |
+
+`App.tsx` is a simple step-router. `Layout.tsx` renders the sidebar + navigation.
+
+## Adding a New Step
+
+1. Create `src/components/NewStep.tsx`
+2. Add step to the `steps` array in `Layout.tsx`
+3. Add `{currentStep === N && <NewStep />}` in `App.tsx`
+4. Add any new state to `useStore.ts`
+5. Update test mocks in `src/tests/flow.test.tsx`
+
+## Key Conventions
+
+- Functional components only (no class components)
+- Framer Motion for animations (`motion.div`, `AnimatePresence`)
+- Lucide React for all icons
+- Step footers MUST use `sticky-foot` class
+- Every processing step MUST have a "Skip for Now" button
